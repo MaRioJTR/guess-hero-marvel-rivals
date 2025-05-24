@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Champion Game</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/game.css">
+
+</head>
+
+<body>
+    <!-- Standard navigation bar (managed by main.css and auth.js) -->
+    <nav>
+        <div class="logo">
+            <img src="assets/marvel-rivals-logo.png" alt="Game Logo">
+            <span class="logo-text">ChampionGuess</span>
+        </div>
+
+        <div class="nav-links">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="mission.html">Mission</a></li>
+                <li><a href="how-it-works.html">How it Works</a></li>
+                <!-- Auth links will be added by auth.js -->
+            </ul>
+        </div>
+    </nav>
+
+    <div class="game-container">
+        <div class="game-content" style="margin-top: 40px;">
+            <h1>Guess the Champion Game</h1>
+
+            <div class="game-header">
+                <div class="score-display">Score: 0</div>
+                <div class="countdown-display">Next round in: 8s</div>
+                <div class="level-display">Level: 1</div>
+            </div>
+
+            <div class="hints-container">
+                <!-- Hints will be dynamically added here by game.js -->
+            </div>
+
+            <div class="hero-buttons">
+                <!-- Hero buttons will be dynamically added here by game.js -->
+            </div>
+
+            <div class="game-controls">
+                <button id="nextHint" class="control-btn">Show Hint</button>
+                <button id="skipHero" class="control-btn">Skip Hero</button>
+            </div>
+        </div>
+
+        <div class="hero-image-container">
+            <div id="heroImage" class="hero-image">
+                <!-- Hero image will be displayed here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Message Popup -->
+    <div id="messagePopup" class="message-popup">
+        <div class="message-content">
+            <h3 id="messageTitle"></h3>
+            <p id="messageText"></p>
+            <button id="messageClose" class="control-button">Continue</button>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/game.js"></script>
+</body>
+
+</html>

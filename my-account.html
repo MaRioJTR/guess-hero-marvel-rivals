@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - Guess the Hero</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/my-account.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <img src="assets/marvel-rivals-logo.png" alt="Game Logo">
+            <span class="logo-text">Guess the Hero</span>
+        </div>
+
+        <div class="nav-links">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="mission.html">Mission</a></li>
+                <li><a href="how-it-works.html">How it Works</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="account-container">
+        <div class="content-wrapper">
+            <div class="account-header">
+                <h1>My Account</h1>
+                <div class="user-info">
+                    <span class="username">Loading...</span>
+                    <button class="logout-btn" onclick="logout()">Logout</button>
+                </div>
+            </div>
+
+            <div class="account-content">
+                <div class="stats-section">
+                    <div class="stat-card">
+                        <h3>Current Rank</h3>
+                        <div class="rank-display">
+                            <img src="" alt="Current Rank" id="rankImage">
+                            <span id="rankName">Loading...</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3>Total Score</h3>
+                        <div class="score-display">
+                            <span id="totalScore">0</span>
+                            <p>points</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3>Level</h3>
+                        <div class="level-display">
+                            <span id="currentLevel">1</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="progress-section">
+                    <h2>Progress to Next Rank</h2>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="rankProgress"></div>
+                    </div>
+                    <p class="progress-text">Points needed for next rank: <span id="pointsNeeded">100</span></p>
+                </div>
+
+                <div class="achievements-section">
+                    <h2>Achievements</h2>
+                    <div class="achievements-grid" id="achievementsGrid">
+                        <!-- Achievements will be dynamically added here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script src="js/my-account.js"></script>
+</body>
+
+</html>

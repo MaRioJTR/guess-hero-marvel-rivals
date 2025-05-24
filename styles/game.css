@@ -1,0 +1,329 @@
+body {
+    /* Keep body style from the provided design */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('../assets/background.png');
+    /* Corrected path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: white;
+}
+
+/* Styles for the game content from the provided design */
+.game-container {
+    width: 90%;
+    max-width: 1400px;
+    padding: 40px;
+    min-height: calc(100vh - 60px);
+    backdrop-filter: blur(5px);
+    margin: 0 auto;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.game-content {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.hero-image-container {
+    flex: 1;
+    max-width: 50%;
+    position: sticky;
+    top: 40px;
+    height: calc(100vh - 100px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.hero-image.active {
+    opacity: 1;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.score-display,
+.level-display,
+.countdown-display {
+    color: #fbdc2c;
+    font-size: 1.2em;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+    padding: 5px 15px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    min-width: 120px;
+    text-align: center;
+}
+
+.countdown-display {
+    color: #00ff00;
+    font-weight: bold;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+h1 {
+    color: #fbdc2c;
+    margin: 0;
+    font-size: 2.5em;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+    text-align: center;
+}
+
+.hints-container {
+    margin-bottom: 20px;
+    /* Adjusted margin */
+}
+
+.hint {
+    margin-bottom: 10px;
+    /* Adjusted margin */
+    padding: 15px;
+    border-left: 4px solid #fbdc2c;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Increased opacity for better readability */
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.hint:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Increased opacity on hover */
+}
+
+.hero-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.hero-button {
+    background: url('../assets/button.png') center/contain no-repeat;
+    /* Corrected image path */
+    border: none;
+    border-radius: 8px;
+    padding: 0;
+    width: 100%;
+    aspect-ratio: 1.5 / 1;
+    /* Adjusted aspect ratio for a more button-like shape */
+    cursor: pointer;
+    font-weight: bold;
+    color: black;
+    transition: all 0.3s;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 0.3s;
+    z-index: 0;
+}
+
+.hero-button:hover {
+    transform: scale(1.05);
+}
+
+.hero-button span {
+    position: relative;
+    z-index: 1;
+}
+
+.game-controls {
+    display: flex;
+    justify-content: center;
+    /* Center control buttons */
+    gap: 20px;
+    /* Space between control buttons */
+    margin-top: 5px;
+    /* Add space above control buttons */
+}
+
+.control-btn {
+    padding: 10px 20px;
+    background-color: #fbdc2c;
+    /* Yellow background */
+    color: black;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.control-btn:hover {
+    background-color: #e0c724;
+    /* Darker yellow on hover */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 1024px) {
+    .game-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .game-content,
+    .hero-image-container {
+        max-width: 100%;
+    }
+
+    .hero-image-container {
+        height: 400px;
+        position: relative;
+        top: 0;
+    }
+}
+
+/* Message Popup Styles */
+.message-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.message-popup.active {
+    display: flex;
+}
+
+.message-content {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 90%;
+    width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border: 2px solid #ffd700;
+    animation: popupFadeIn 0.3s ease-out;
+}
+
+.message-content h3 {
+    color: #ffd700;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.message-content p {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+}
+
+.message-content .control-button {
+    background: linear-gradient(135deg, #ffd700 0%, #ffa500 100%);
+    color: #000;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.message-content .control-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+@keyframes popupFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Success message specific styles */
+.message-popup.success .message-content {
+    border-color: #00ff00;
+}
+
+.message-popup.success h3 {
+    color: #00ff00;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+/* Error message specific styles */
+.message-popup.error .message-content {
+    border-color: #ff0000;
+}
+
+.message-popup.error h3 {
+    color: #ff0000;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+/* Skip message specific styles */
+.message-popup.skip .message-content {
+    border-color: #ffa500;
+}
+
+.message-popup.skip h3 {
+    color: #ffa500;
+    text-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+}

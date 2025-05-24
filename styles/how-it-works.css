@@ -1,0 +1,150 @@
+.how-it-works-container {
+    padding: 100px 20px 40px;
+    min-height: 100vh;
+}
+
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 60px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.steps-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.step {
+    display: flex;
+    gap: 30px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.step:hover {
+    transform: translateX(10px);
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.step-content h3 {
+    color: var(--primary-color);
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.step-content p {
+    color: var(--text-color);
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.ranks-section {
+    margin-bottom: 60px;
+}
+
+.ranks-section h2 {
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.ranks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.rank-card {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.rank-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(251, 220, 44, 0.2);
+}
+
+.rank-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.rank-card h4 {
+    color: var(--primary-color);
+    font-size: 1.3em;
+    margin-bottom: 5px;
+}
+
+.rank-card p {
+    color: var(--text-color);
+    font-size: 1em;
+}
+
+.cta-section {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.cta-section .primary-btn {
+    font-size: 1.2em;
+    padding: 15px 40px;
+}
+
+@media (max-width: 768px) {
+    .how-it-works-container {
+        padding: 80px 20px 30px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+        margin-bottom: 40px;
+    }
+
+    .step {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .step-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5em;
+    }
+
+    .ranks-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+    }
+}

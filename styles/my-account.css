@@ -1,0 +1,224 @@
+.account-container {
+    padding: 100px 20px 40px;
+    min-height: 100vh;
+}
+
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.account-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.account-header h1 {
+    color: var(--primary-color);
+    font-size: 3em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.username {
+    color: var(--text-color);
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.logout-btn {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}
+
+.stats-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.stat-card {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid var(--primary-color);
+}
+
+.stat-card h3 {
+    color: var(--primary-color);
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.rank-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.rank-display img {
+    width: 100px;
+    height: auto;
+}
+
+.rank-display span {
+    color: var(--text-color);
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.score-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.score-display span {
+    color: var(--primary-color);
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.score-display p {
+    color: var(--text-color);
+    font-size: 1.1em;
+}
+
+.level-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.level-display span {
+    color: var(--primary-color);
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.progress-section {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 60px;
+}
+
+.progress-section h2 {
+    color: var(--primary-color);
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: var(--primary-color);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    color: var(--text-color);
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.progress-text span {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.achievements-section {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.achievements-section h2 {
+    color: var(--primary-color);
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.achievement-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.achievement-card h4 {
+    color: var(--primary-color);
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.achievement-card p {
+    color: var(--text-color);
+    font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+    .account-container {
+        padding: 80px 20px 30px;
+    }
+
+    .account-header {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .account-header h1 {
+        font-size: 2.5em;
+    }
+
+    .stats-section {
+        grid-template-columns: 1fr;
+    }
+
+    .achievements-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
