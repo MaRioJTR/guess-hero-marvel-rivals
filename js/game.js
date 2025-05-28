@@ -202,7 +202,7 @@ const heroes = [
     },
     {
         name: "Mr. Fantastic",
-        image: "assets/heroes/mr-fantastic_prestige.webp",
+        image: "assets/heroes/mister-fantastic_prestige.webp",
         audio: "assets/audio/mr-fantastic.mp3",
         hints: [
             "Can stretch his body into any shape.",
