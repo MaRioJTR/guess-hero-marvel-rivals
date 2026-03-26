@@ -5,18 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Guess the Hero</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦸</text></svg>">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/auth.css">
 </head>
 
 <body>
     <nav>
-        <div class="logo">
+        <a class="logo" href="index.html">
             <img src="assets/marvel-rivals-logo.png" alt="Game Logo">
             <span class="logo-text">Guess the Hero</span>
-        </div>
+        </a>
 
-        <div class="nav-links">
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="nav-links" id="navLinks">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="mission.html">Mission</a></li>

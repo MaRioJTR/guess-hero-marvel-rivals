@@ -5,18 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guess the Hero - Marvel Rivals</title>
+    <meta name="description" content="Test your Marvel Rivals knowledge — guess heroes from hints and climb the ranks!">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦸</text></svg>">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/auth.css">
 </head>
 
 <body>
     <nav>
-        <div class="logo">
+        <a class="logo" href="index.html">
             <img src="assets/marvel-rivals-logo.png" alt="Game Logo">
             <span class="logo-text">Guess the Hero</span>
-        </div>
+        </a>
 
-        <div class="nav-links">
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="nav-links" id="navLinks">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="mission.html">Mission</a></li>
@@ -30,14 +38,68 @@
     <main class="home-content">
         <div class="hero-section">
             <h1>Test Your Marvel Knowledge</h1>
-            <p style="color: black;">Challenge yourself to identify Marvel Rivals heroes from their unique
-                characteristics and abilities.</p>
+            <p>Challenge yourself to identify Marvel Rivals heroes from their unique
+                characteristics and abilities. Climb the ranks and prove you're a true Marvel expert!</p>
             <div class="cta-buttons">
                 <a href="login.html" class="primary-btn">Get Started</a>
                 <a href="how-it-works.html" class="secondary-btn">Learn More</a>
             </div>
         </div>
+
+        <div class="features-section">
+            <h2>Why Play?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">🧩</span>
+                    <h3>Challenging Hints</h3>
+                    <p>Each round gives you up to five unique clues about a Marvel Rivals hero. Can you guess them all?</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🏆</span>
+                    <h3>Rank Up</h3>
+                    <p>Earn points for every correct guess and rise through the ranks — from Bronze all the way to One Above All.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">⚡</span>
+                    <h3>Fast-Paced Fun</h3>
+                    <p>Quick rounds with a countdown timer keep you on your toes. Think fast, true believer!</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🦸</span>
+                    <h3>20+ Heroes</h3>
+                    <p>Face off against a roster of iconic Marvel Rivals characters with unique hints and artwork.</p>
+                </div>
+            </div>
+        </div>
     </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="logo-text">Guess the Hero</span>
+                <p>A Marvel Rivals fan quiz game. Test your hero knowledge and rise through the ranks!</p>
+            </div>
+            <div class="footer-links">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="mission.html">Mission</a></li>
+                    <li><a href="how-it-works.html">How it Works</a></li>
+                </ul>
+            </div>
+            <div class="footer-play">
+                <h4>Play</h4>
+                <ul>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="game.html">Play Now</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Guess the Hero &mdash; Marvel Rivals Fan Game. Not affiliated with Marvel or NetEase Games.</p>
+        </div>
+    </footer>
 
     <script src="js/auth.js"></script>
 </body>

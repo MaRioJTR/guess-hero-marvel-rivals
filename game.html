@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guess the Champion Game</title>
+    <title>Guess the Hero - Play</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦸</text></svg>">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/game.css">
 
@@ -13,12 +14,18 @@
 <body>
     <!-- Standard navigation bar (managed by main.css and auth.js) -->
     <nav>
-        <div class="logo">
+        <a class="logo" href="index.html">
             <img src="assets/marvel-rivals-logo.png" alt="Game Logo">
-            <span class="logo-text">ChampionGuess</span>
-        </div>
+            <span class="logo-text">Guess the Hero</span>
+        </a>
 
-        <div class="nav-links">
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="nav-links" id="navLinks">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="mission.html">Mission</a></li>
@@ -30,7 +37,7 @@
 
     <div class="game-container">
         <div class="game-content" style="margin-top: 40px;">
-            <h1>Guess the Champion Game</h1>
+            <h1>Guess the Hero</h1>
 
             <div class="game-header">
                 <div class="score-display">Score: 0</div>
