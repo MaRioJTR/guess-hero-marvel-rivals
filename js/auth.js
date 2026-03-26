@@ -1,4 +1,38 @@
-// Check if user is logged in
+// ── Hamburger menu toggle ─────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', function () {
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('navLinks');
+
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', function () {
+            const isOpen = navLinks.classList.toggle('open');
+            hamburger.classList.toggle('open', isOpen);
+            hamburger.setAttribute('aria-expanded', String(isOpen));
+        });
+
+        // Close menu when a nav link is clicked (mobile UX)
+        navLinks.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', function () {
+                navLinks.classList.remove('open');
+                hamburger.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
+            });
+        });
+    }
+
+    // ── Active nav link highlighting ──────────────────────────────
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a').forEach(function (link) {
+        const linkPath = link.getAttribute('href');
+        if (linkPath && linkPath === currentPath) {
+            link.classList.add('active-link');
+        }
+    });
+
+    checkAuth();
+});
+
+// ── Auth state ────────────────────────────────────────────────────
 function checkAuth() {
     const user = localStorage.getItem('user');
     const navLinks = document.querySelector('.nav-links ul');
@@ -33,7 +67,7 @@ function checkAuth() {
             // Remove My Account link if it exists
             const userMenu = navLinks.querySelector('.user-menu');
             if (userMenu) {
-                userMenu.remove();
+                userMenu.parentElement.remove();
             }
 
             // Add login/register buttons if they don't exist
@@ -56,7 +90,13 @@ function checkAuth() {
     }
 }
 
-// Handle login form submission
+// ── Logout helper (used by my-account.html) ───────────────────────
+function logout() {
+    localStorage.removeItem('user');
+    window.location.href = 'index.html';
+}
+
+// ── Login form ────────────────────────────────────────────────────
 const loginForm = document.getElementById('loginForm');
 if (loginForm) {
     loginForm.addEventListener('submit', function (e) {
@@ -85,7 +125,7 @@ if (loginForm) {
     });
 }
 
-// Handle registration form submission
+// ── Register form ─────────────────────────────────────────────────
 const registerForm = document.getElementById('registerForm');
 if (registerForm) {
     registerForm.addEventListener('submit', function (e) {
@@ -130,6 +170,3 @@ if (registerForm) {
         window.location.href = 'index.html';
     });
 }
-
-// Initialize auth state
-document.addEventListener('DOMContentLoaded', checkAuth); 
