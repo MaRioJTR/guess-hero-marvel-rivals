@@ -31,10 +31,6 @@
     color: var(--text-color);
     font-size: 1.2em;
     font-weight: bold;
-    background-color: rgba(0, 0, 0, 0.6);
-    border: 1px solid rgba(251, 220, 44, 0.3);
-    padding: 8px 16px;
-    border-radius: 8px;
 }
 
 .logout-btn {
